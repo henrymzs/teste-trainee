@@ -41,3 +41,19 @@ Error: Can't resolve 'node_modules/@fortawesome/fontawesome-free/css/all.min.css
 apesar da fonte estar no angular.json ainda sim dava esse erro, entao pensei em instalar a fonte com npm, e apos baixar a fonte com npm install @fortawesome/fontawesome-free
 
 o projeto rodou e com isso entrei comecei a corrigir os bugs do projeto
+
+bug 1  Ao clicar no botão “Salvar”, a tarefa está sendo adicionada duas vezes.
+encontrei o erro na função addTask,na linha this.todoService.addTodo(newTodo) onde na mesma adicionava a tarefa duas vezes 
+addTask() {
+    if(this.count > 0) return
+    const newTodo: Todo = {
+      id: this.todoService.getTodoNewId(),
+      title: this.newTaskTitle,
+      completed: false
+    };
+
+    this.todoService.addTodo(newTodo); // apenas removi essa linha e ao salvar o sistema salva apenas uma tarefa
+    this.todoService.addTodo(newTodo);
+    this.newTaskTitle = '';
+    this.count++
+  }
