@@ -21,3 +21,7 @@ apos utilizar o exemplo que foi dado
 }
 
 apos isso rodou o projeto e ai que tive acesso aos erros do projeto e comecei realmente e debugar o projeto
+
+1. primeiro erro que encontrei foi que nesse arquivo header.component.ts
+estava dando erro nessa linha 'export class HeadeComponent implements OnInit'
+HeadeComponent estava sendo importado de forma incorreta apos faltava um erro, apos corrigir isso o erro não voltou aparecer no terminal 
