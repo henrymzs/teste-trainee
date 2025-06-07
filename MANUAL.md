@@ -44,6 +44,7 @@ o projeto rodou e com isso entrei comecei a corrigir os bugs do projeto
 
 bug 1  Ao clicar no botão “Salvar”, a tarefa está sendo adicionada duas vezes.
 encontrei o erro na função addTask,na linha this.todoService.addTodo(newTodo) onde na mesma adicionava a tarefa duas vezes 
+  count = 0;
 addTask() {
     if(this.count > 0) return
     const newTodo: Todo = {
@@ -57,3 +58,4 @@ addTask() {
     this.newTaskTitle = '';
     this.count++
   }
+e com a remoção da condição ja nao é mais necessario count e nem this.count++
