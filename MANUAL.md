@@ -25,3 +25,19 @@ apos isso rodou o projeto e ai que tive acesso aos erros do projeto e comecei re
 1. primeiro erro que encontrei foi que nesse arquivo header.component.ts
 estava dando erro nessa linha 'export class HeadeComponent implements OnInit'
 HeadeComponent estava sendo importado de forma incorreta apos faltava um erro, apos corrigir isso o erro não voltou aparecer no terminal 
+
+2. Proximo erro abordado no projeto foi esse: 
+Error: src/app/todo/new-task/new-task.component.ts:12:23 - error NG2003: No suitable injection token for parameter 'todoService' of class 'NewTaskComponent'.
+  Consider using the @Inject decorator to specify an injection token.
+
+12   constructor(private todoService: TodoService) { }
+
+para esse erro apenas estava faltando a importação do arquivo import { TodoService } from 'src/app/shared/services/todo.service';
+ao passar mouse em cima de 'TodoService' com o comando quickfix importei de forma rapida e resolveu o erro
+
+3. Proximo erro que me deparei foi esse
+Error: Can't resolve 'node_modules/@fortawesome/fontawesome-free/css/all.min.css' in '/home/henrypc/Documentos/henry.com/frontend/angular/trainee-dev'
+
+apesar da fonte estar no angular.json ainda sim dava esse erro, entao pensei em instalar a fonte com npm, e apos baixar a fonte com npm install @fortawesome/fontawesome-free
+
+o projeto rodou e com isso entrei comecei a corrigir os bugs do projeto
