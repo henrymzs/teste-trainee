@@ -66,3 +66,18 @@ get labelClearAll(){
     return 'Clear All'
   }
 bastou mudar para Limpar Tudo
+
+bug 04: 
+4.  O botão “Exibir Tarefas Concluídas” está, na verdade, ocultando as tarefas concluídas.
+5.  O botão “Ocultar Tarefas Concluídas” tem o comportamento invertido, exibindo as tarefas concluídas.
+
+apos resolver o problema anterior esse foi o proximo e a função que invertia o problema descrito estava logo acima
+ filteredTodos() {
+    return this.showCompletedTasks ? this.todos : this.todos.filter(todo => !todo.completed);
+  }
+  por causa do nome da função imaginei que seria isso, e apos entender a função vi que ela era mesmo a responsavel pela confusao que estava acontecendo, como foi descrito que estava invertido a logica, apenas inverti a função ternaria, dessa forma
+  se for false vai exibir todas as tarefas mas se for true aplica o filtro e nao exibir as tarefas concluidas
+
+  filteredTodos() {
+    return this.showCompletedTasks ? this.todos.filter(todo => !todo.completed) : this.todos;
+  }
