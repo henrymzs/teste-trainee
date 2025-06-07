@@ -59,3 +59,10 @@ addTask() {
     this.count++
   }
 e com a remoção da condição ja nao é mais necessario count e nem this.count++
+
+bug 03: 3.  O texto do botão de limpar todas as tarefas não está em português.
+para resolver esse problema inicialmente procurei o componente do botao onde provalvelmente iria estar o nome do botao, mas esse diferente dos demais não estava diretamente no botao e sim vindo de outro lugar, dessa forma utilizei a ferremanta de pesquisa do vscode e procurei ate achar de onde vinha o texto e de forma facil achei
+get labelClearAll(){
+    return 'Clear All'
+  }
+bastou mudar para Limpar Tudo
