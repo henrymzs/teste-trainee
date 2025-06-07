@@ -81,3 +81,14 @@ apos resolver o problema anterior esse foi o proximo e a função que invertia o
   filteredTodos() {
     return this.showCompletedTasks ? this.todos.filter(todo => !todo.completed) : this.todos;
   }
+
+bug 05: 6.  Ao clicar em “Limpar Tarefas Concluídas”, a ação é executada sem pedir uma confirmação ao usuário.
+7.  O botão “Limpar Tarefas Concluídas” está removendo as tarefas não concluídas em vez das concluídas.
+para resolver esse bug pesquisei no codigo por “Limpar Tarefas Concluídas” nisso eu cai no botao que estava com esse nome
+"<button (click)="clearCompletedTasks()">Limpar Tarefas Concluídas</button>" apos isso bastou copiar o nome da função que esta no butao caindo na função original 
+clearCompletedTasks() {
+    this.todos = this.todos.filter(({ completed }) => completed === true);
+    this.updateLocalStorageAndSave();
+  }
+  nesse codigo como final estava com true esta mantendo as tarefas concluidas e removendo o resto, comparando se completed é igual a true, nesse caso apenas mudei para false de forma que ira manter as tarefas pendentes e excluir as concluidas e apenas inclui um alert no começo do codigo 
+

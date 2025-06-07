@@ -82,7 +82,8 @@ export class TodoService {
   }
 
   clearCompletedTasks() {
-    this.todos = this.todos.filter(({ completed }) => completed === true);
+    alert('Quer mesmo excluir as tarefas concluídas?')
+    this.todos = this.todos.filter(({ completed }) => completed === false);
     this.updateLocalStorageAndSave();
   }
 }
