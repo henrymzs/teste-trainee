@@ -160,5 +160,14 @@ oque tinha precedencia em relação ao arquivo externo que estava dessa forma:
 }
 Então uma maneira simples de resolver este problema foi remover a estilização dentro do próprio componente que estava causando esse problema, dessa forma deixando toda a estilização da sua classe e funcionando como deveria e deixando mais organizado.
 
+10. Bug 11:
+- A lista de tarefas não apresenta uma barra de rolagem quando o número de itens ultrapassa a altura do painel, impedindo a visualização de todas as tarefas.
+
+De primeira eu achei que o elemento pai para que eu pudesse estilizar para aparecer a barra de rolagem seria esse
+<div class="todo-item">
+Mas apos colocar uma borda, percebi que estava me confudindo, e voltei a tela do projeto e utilizei a ferramenta de inspecionar para saber rapidamente o nome da classe responsável pelo elemento e pesquisar no projeto, facilmente achei a classe e apenas utilizei border=1px solid:red para confirmar, após ter certeza que era o elemento certo mudei apenas uma estilização e funcionou como deveria:
+  overflow-y: auto;
+
+
 
 
