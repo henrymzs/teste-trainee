@@ -125,7 +125,7 @@ clearCompletedTasks() {
   }
   nesse codigo como final estava com true esta mantendo as tarefas concluidas e removendo o resto, comparando se completed é igual a true, nesse caso apenas mudei para false de forma que ira manter as tarefas pendentes e excluir as concluidas e apenas inclui um alert no começo do codigo 
 
-7. Bug 07: 
+7. Bug 08: 
 - O botão “Editar” não está funcional. O comportamento esperado é: ao clicar, o campo “Título da Tarefa” deve ser preenchido com o texto da tarefa selecionada. Ao salvar, o item na lista deve ser atualizado e o campo de texto limpo.
 
 Primeiramente não entendi essa tarefa, achei um pouco confusa, mas apos reler algumas vezes entendi que o input do onde esta para salvar a tarefa iria servir para ao clickar no botão de editar ele iria pegar o nome da tarefa e iria ficar naquele input, possibilitando ao usuário modificar o nome e ao clickar no botão 'salvar a tarefa seria modificada' após tentar não consegui solucionar esse problema e optei por resolver de outra forma, ao inves de ser um label da tarefa, alterei para ser um input, dessa forma o usuário podendo fazer alteração diretamente na tarefa. Dessa forma abaixo:
@@ -134,4 +134,14 @@ Primeiramente não entendi essa tarefa, achei um pouco confusa, mas apos reler a
       type="text"
       [(ngModel)]="todo.title"
     />
+
+8. Bug 09:
+- O botão “Editar” está desalinhado e deve ser posicionado ao lado do botão “Remover”.
+
+Para resolver este problema primeirameira identifiquei onde estava os botões e apos achar eles percebi que eles estavam 'soltos' então decidi deixar eles dentro de uma div, oque já fez com que eles se alinhassem um ao lado do outro, mas eles ficaram colado oque na era o desejado, para resolver este problemas pensei em colocar um gap entre eles mas para utilizar o gap precisei dar display flex a div e assim fiz oque deu o resultado que eu esperava, no fim ficou dessa forma:
+.todo-item-btn {
+  display: flex;
+  gap: 20px;
+}
+
 
