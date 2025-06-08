@@ -144,4 +144,21 @@ Para resolver este problema primeirameira identifiquei onde estava os botões e 
   gap: 20px;
 }
 
+9. Bug 10:
+- O botão “Remover” deve ter a cor vermelha para indicar uma ação destrutiva.
+O botão não estava com a cor vermelha como deveria por causa da ordem de precedencia do CSS no botão tinha um style=color:red
+<button class="todo-item_delete" style="color: black" (click)="deleteTodo()">
+
+oque tinha precedencia em relação ao arquivo externo que estava dessa forma:
+.todo-item_delete {
+  width: 10px;
+  width: fit-content;
+  color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+Então uma maneira simples de resolver este problema foi remover a estilização dentro do próprio componente que estava causando esse problema, dessa forma deixando toda a estilização da sua classe e funcionando como deveria e deixando mais organizado.
+
+
 

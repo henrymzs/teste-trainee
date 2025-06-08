@@ -40,10 +40,14 @@
 .todo-item_delete {
   width: 10px;
   width: fit-content;
-  color: red;
+  color: rgb(255, 0, 0);
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.todo-item_delete:hover {
+  color: rgb(165, 0, 0);
 }
 
 
