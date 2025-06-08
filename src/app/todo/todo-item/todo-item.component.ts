@@ -16,9 +16,9 @@ export class TodoItemComponent {
   deleteTodo(): void {
     if (confirm('Are you sure you want to delete this task?')) {
       this.todoService.deleteTodo(this.todo.id);
-    }
+    } 
   }
-
+  
   onTaskChecked(): void {
     this.todoService.updateTodo(this.todo);
   }
