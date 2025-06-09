@@ -76,6 +76,10 @@ export class TodoService {
     });
   }
 
+  sortTasksAZ() {
+    this.todos.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
   clearAll() {
     this.todos = [];
     this.updateLocalStorageAndSave();

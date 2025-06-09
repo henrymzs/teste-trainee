@@ -22,6 +22,10 @@ export class TodoComponent implements OnInit {
       this.todos = todos;
     });
   }
+  
+  sortTodoAZ() {
+    this.todoService.sortTasksAZ()
+  }
 
   addTodo(newTodoTitle: string) {
     const newTodo: Todo = {
