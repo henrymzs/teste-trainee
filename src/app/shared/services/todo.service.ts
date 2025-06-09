@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Todo } from '../models/todo.model';
+import { jsPDF } from "jspdf";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,20 @@ export class TodoService {
 
   private saveToLocalStorage(): void {
     localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  generatePDF(todos: Todo[]):void {
+    const doc = new jsPDF();
+    doc.setFont("helvetica", "bold");
+    doc.text("Lista de Tarefas", 10, 10);
+
+    let posY = 20;
+    todos.forEach((todo, index) => {
+      const status = todo.completed ? "[v]" : "[]";
+      doc.text(`${index + 1}. ${status} ${todo.title}`, 10, posY);
+      posY += 10;
+    })
+    doc.save("Tarefas.pdf");
   }
 
   private loadFromLocalStorage(): void {

@@ -22,7 +22,7 @@ export class TodoComponent implements OnInit {
       this.todos = todos;
     });
   }
-  
+
   sortTodoAZ() {
     this.todoService.sortTasksAZ()
   }
@@ -67,7 +67,11 @@ export class TodoComponent implements OnInit {
     return this.showCompletedTasks ? this.todos.filter(todo => !todo.completed) : this.todos;
   }
 
-  get labelClearAll(){
+  gerarPDF() {
+    this.todoService.generatePDF(this.todos);
+  }
+
+  get labelClearAll() {
     return 'Limpar Tudo'
   }
 }

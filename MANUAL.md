@@ -196,6 +196,9 @@ Para essa tarefa fui diretamente na função addTask e pensei como poderia fazer
 
 Para solucionar esse problema primeiramente entrei no repositorio do plugin e pesquisei por exemplos de como fazer isso, por ser mais rapido optei por declarar localmente as palavras que deverão ser censuradas e declarei um array de palavras que não podem ser titulos de tarefas, utilizando o método some() para ver se o input do usuário é algumas das palavras proibidas, posteriormente faço um if onde coloco uma parada no código e aviso ao usuário que não é permitido
 
+5.  Adicionar a funcionalidade de exportar a lista de tarefas atual para um arquivo PDF. (Sugestão de biblioteca: `https://github.com/parallax/jsPDF`).
+
+Para resolver esse problema entrei no repositorio do projeto oque foi bem fácil seguindo a própria documentação, fiz a função e alterei algumas coisas para o usuário saber as tarefas realizadas e as pendentes, coloquei uma abaixa da outra e separei as responsabilidades para melhor organização do código.
 
 
 
