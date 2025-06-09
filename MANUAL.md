@@ -183,4 +183,13 @@ Utilizando this para me referir a instancia da classe newTaskComponent, utilizan
 
 Para resolver esse problema utilizei como base o metodo sortTodos() que já estava presente no código e pensei que poderia fazer algo parecido, utilizando 'sort', após isso utilizei deste método juntamente com localcompare, passando dois elementos (a, b) onde eu comparava os dois elementos, mais precisamente o titulo deles, onde comparava se a vinha antes de b, se fosse retorna -1, mantendo a antes de b, se b vier antes a retorna 1, movendo b para antes de 'a' e se forem iguais retorna 0. 
 
+2.  Permitir que o usuário adicione uma tarefa pressionando a tecla `Enter` no campo de texto, além do clique no botão “Salvar”.
+
+Essa tarefa se tornou relativamente fácil pois no Bug 08 enquanto tentava solucionar aquele problema e pedi ajuda a IA, ela me retornou um código que tinha um input com ação do botão enter, diferente do que normalmente se faz no frontend puro que se cria um ouvinte para aquele click aqui bastava colocar a ação com a função, antes apenas reutilizei a lógica, dessa forma:
+(keyup.enter)="addTask()"
+
+
+
+
+
 
