@@ -17,13 +17,19 @@ export class NewTaskComponent {
       alert('O titulo da tarefa não pode estar vazio!');
       return;
     }
-    const newTodo: Todo = {
-      id: this.todoService.getTodoNewId(),
-      title: this.newTaskTitle,
-      completed: false
-    };
 
-    this.todoService.addTodo(newTodo);
+    const tarefasSeparadas = this.newTaskTitle.split('|').map(tarefa => tarefa.trim());
+
+    tarefasSeparadas.forEach(title => {
+      if (title) {
+        const newTodo: Todo = {
+          id: this.todoService.getTodoNewId(),
+          title: title,
+          completed: false
+        };
+        this.todoService.addTodo(newTodo);
+      }
+    });
     this.newTaskTitle = '';
   }
 }

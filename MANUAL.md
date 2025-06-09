@@ -188,6 +188,9 @@ Para resolver esse problema utilizei como base o metodo sortTodos() que já esta
 Essa tarefa se tornou relativamente fácil pois no Bug 08 enquanto tentava solucionar aquele problema e pedi ajuda a IA, ela me retornou um código que tinha um input com ação do botão enter, diferente do que normalmente se faz no frontend puro que se cria um ouvinte para aquele click aqui bastava colocar a ação com a função, antes apenas reutilizei a lógica, dessa forma:
 (keyup.enter)="addTask()"
 
+3.  Permitir a adição de múltiplas tarefas de uma só vez. O usuário deverá digitar os títulos separados pelo caractere `|` (pipe).
+
+Para essa tarefa fui diretamente na função addTask e pensei como poderia fazer isso, teria que quebrar o input do usuário ao meio com | para dividir tarefa, algo que fiz foi dividir o input com split , assim sendo um array separados por pipe, após isso utilizando novamente a função trim() para remover espaçõs e adicionando uma condição para não adicionar tarefas em branco, ficando assim:
 
 
 
