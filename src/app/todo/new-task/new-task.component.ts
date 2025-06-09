@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Todo } from '../../shared/models/todo.model';
 import { TodoService } from 'src/app/shared/services/todo.service';
+import { Filter } from 'bad-words';
+const filter = new Filter();
 
 @Component({
   selector: 'app-new-task',
@@ -9,12 +11,23 @@ import { TodoService } from 'src/app/shared/services/todo.service';
 })
 export class NewTaskComponent {
   newTaskTitle: string = '';
+  localList = { words: ['fortaleza maior do estado', 'caralho', 'fi da peste', 'ze ruela', 'corno'] };
 
   constructor(private todoService: TodoService) { }
+
+  containsBadWord(text: string): boolean {
+    return this.localList.words.some(word => text.toLowerCase().includes(word));
+  }
 
   addTask() {
     if (!this.newTaskTitle.trim()) {
       alert('O titulo da tarefa não pode estar vazio!');
+      return;
+    }
+
+    const textoFiltrado = filter.clean(this.newTaskTitle);
+    if (textoFiltrado !== this.newTaskTitle || this.containsBadWord(this.newTaskTitle)) {
+      alert('Esse título contém palavras não permitidas ou mentirosas!');
       return;
     }
 

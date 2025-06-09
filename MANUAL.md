@@ -192,6 +192,10 @@ Essa tarefa se tornou relativamente fácil pois no Bug 08 enquanto tentava soluc
 
 Para essa tarefa fui diretamente na função addTask e pensei como poderia fazer isso, teria que quebrar o input do usuário ao meio com | para dividir tarefa, algo que fiz foi dividir o input com split , assim sendo um array separados por pipe, após isso utilizando novamente a função trim() para remover espaçõs e adicionando uma condição para não adicionar tarefas em branco, ficando assim:
 
+4. Implementar um filtro de palavras obscenas. Caso o usuário tente cadastrar uma tarefa contendo um palavrão, exiba a mensagem: “Não é permitido cadastrar tarefas com palavras obscenas.” (Sugestão de biblioteca: `https://github.com/web-mech/badwords`).
+
+Para solucionar esse problema primeiramente entrei no repositorio do plugin e pesquisei por exemplos de como fazer isso, por ser mais rapido optei por declarar localmente as palavras que deverão ser censuradas e declarei um array de palavras que não podem ser titulos de tarefas, utilizando o método some() para ver se o input do usuário é algumas das palavras proibidas, posteriormente faço um if onde coloco uma parada no código e aviso ao usuário que não é permitido
+
 
 
 
