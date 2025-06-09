@@ -168,6 +168,14 @@ De primeira eu achei que o elemento pai para que eu pudesse estilizar para apare
 Mas apos colocar uma borda, percebi que estava me confudindo, e voltei a tela do projeto e utilizei a ferramenta de inspecionar para saber rapidamente o nome da classe responsável pelo elemento e pesquisar no projeto, facilmente achei a classe e apenas utilizei border=1px solid:red para confirmar, após ter certeza que era o elemento certo mudei apenas uma estilização e funcionou como deveria:
   overflow-y: auto;
 
+11. Bug 12: 
+- Salvar sem digitar um “Título da Tarefa” está adicionando um item em branco à lista.
 
+Para resolver este problema coloquei um condição onde o usuário necessita colocar um titulo para a tarefa, dessa forma:
+if (!this.newTaskTitle.trim()) {
+      alert('O titulo da tarefa não pode estar vazio!');
+      return;
+    }
+Utilizando this para me referir a instancia da classe newTaskComponent, utilizando o trim() para remover espaços vazios com negação '!' para verificar se algo foi digitado ou não
 
 
