@@ -1,9 +1,10 @@
 # Desafio de Código: Gerenciador de Tarefas (Angular)
+
 **Relatório Técnico - Henry Kauã**
 
 **1. Visão Geral da Solução:** Um breve resumo do que foi feito.
 
-..............................
+Peguei este projeto para identificar bugs, implementar melhorias e aprender com o que já havia sido desenvolvido. Trata-se de um projeto muito bem organizado e de fácil entendimento, utilizando bibliotecas externas e modificações em alertas e confirmações. Além disso, refatorei lógicas de funções e estilizações propositalmente erradas para me desafiar a corrigir tudo, aprendendo com esses desafios e chegando a uma solução consistente. Isso me permitiu desenvolver minha lógica em um projeto formidável, utilizando tecnologias que não eram tão comuns para mim, mas que, ao final, consegui dominar e entregar conforme o esperado.
 
 **2. Como Executar a Aplicação:** Instruções claras para clonar, instalar e rodar o projeto (`npm install`, `npm start`).
 
@@ -203,6 +204,24 @@ Para resolver esse problema entrei no repositorio do projeto oque foi bem fácil
 6.  Substituir todos os `alert`s e `confirm`s nativos do navegador por uma experiência mais moderna, utilizando a biblioteca SweetAlert. (Sugestão: `https://sweetalert2.github.io/`).
 
 Para resolver este problema entrei no repositorio e achei exemplos de como colocar alerts personalizados, com exemplos não achei tão dificil de implementar tão solução.
+
+### Relatório de Débito Técnico:** Para cada ítem da lista de bugs e melhorias que você não conseguiu resolver ou implementar, descreva quais foram as dificuldades que você enfrentou na qual fizerem com que você não tenha conseguido entregar.
+
+Não consegui realizar conforme era esperado o bug para realizar a edição da tarefa, por outro lado cheguei no mesmo resultado de forma diferente, colocando um input ao inves de um label, possibilitando ao usuário que edite sua tarefa diretamente, sem muitos cliques.Dessa forma abaixo;
+
+<input id="task-title-{{ todo.id }}" class="todo-item_input" type="text" [(ngModel)]="todo.title" />
+
+### Relatório de Melhorias:
+
+Seria interrasente colocar mais alert alem do que foi feito, por exemplo ao gerar o PDF, um alert onde teria uma um tempinho, para que o usuário saiba que está gerando seu PDF, na parte de adicionar tarefa seria bom ao inves de colocar pipe, para dividir as tarefas colocar 'e' me parece ser algo mais normal e fluido ao inves de colocar |. Colocar animações ao passar o mouse no botão para transmitir ao usuário que aquele botão tem uma ação que ele é clickavel, seria bom criar tarefas que dependesem das outras, um exemplo simples, Limpar a casa e outras tarefas abaixo dela seria varrer a casa, passar o pano, e com essas tarefas secundárias realizadas a tarefa primária que era Limpar a casa seria automaticamente feita, colocando uma setinha para baixa para essas tarefas que dependem da outra de forma que pudesse esconder as tarefas secundárias
+
+## Decisões e Considerações:** 
+
+No final do projeto ao utilizar os alert personalizado percebi que muitas vezes import o Swal, oque não deve ser correto, provalvelmente posso estar declarando em um diretorio oque vai exportar para outras partes do projeto e apenas iria utilizar ele, mas por falta de tempo optei por fazer dessa forma, e pensei nisso pois o projeto em si é bem organizado, separando bem as responsabilidades, quando abri pela primeira vez, causou confusão por ter muitas pastas, mas conforme fui editando arquivos fui entendo mais do projeto e vendo para oq servia cada parte.
+
+### Agradeço pela oportunidade e foi legal trabalhar com uma tecnologia que ate então não tinha utilizado.
+
+
 
 
 

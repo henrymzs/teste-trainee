@@ -1,5 +1,12 @@
 # Desafio de Código: Gerenciador de Tarefas (Angular)
 
+### Optei por não mudar esse projeto, mas abaixo esta um link do meu relatorio:
+
+[Veja mais detalhes do Relatorio](/Relatorio.md)
+
+[Mande um email](mailto:henrykaua21@gmail.com)
+
+
 ## 1. Visão Geral do Projeto
 
 Bem-vindo(a) ao nosso desafio de código!
@@ -88,7 +95,8 @@ Ao finalizar todo o trabalho, você deve:
     * **5. Relatório de Implementação de Melhorias:** Para cada melhoria, descreva sua abordagem técnica e quais bibliotecas foram utilizadas.
     * **6. Relatório de Débito Técnico:** Para cada ítem da lista de bugs e melhorias que você não conseguiu resolver ou implementar, descreva quais foram as dificuldades que você enfrentou na qual fizerem com que você não tenha conseguido entregar.
     * **7. Relatório de Melhorias:** Descreva quais melhorias (novas funcionalidades) você acha interessante que sejam implementadas para evoluir o sistema.
-    * **8. Decisões e Considerações:** (Opcional) Espaço para comentar qualquer decisão de arquitetura ou desafio interessante que você encontrou.
+    Um desafio legal que acabei encontrando foi o do bug para editar tarefas, não conseguil fazer como desejado, e optei por fazer de out
+
     
 
 ---
