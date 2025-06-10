@@ -200,6 +200,10 @@ Para solucionar esse problema primeiramente entrei no repositorio do plugin e pe
 
 Para resolver esse problema entrei no repositorio do projeto oque foi bem fácil seguindo a própria documentação, fiz a função e alterei algumas coisas para o usuário saber as tarefas realizadas e as pendentes, coloquei uma abaixa da outra e separei as responsabilidades para melhor organização do código.
 
+6.  Substituir todos os `alert`s e `confirm`s nativos do navegador por uma experiência mais moderna, utilizando a biblioteca SweetAlert. (Sugestão: `https://sweetalert2.github.io/`).
+
+Para resolver este problema entrei no repositorio e achei exemplos de como colocar alerts personalizados, com exemplos não achei tão dificil de implementar tão solução.
+
 
 
 

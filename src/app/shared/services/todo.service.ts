@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Todo } from '../models/todo.model';
 import { jsPDF } from "jspdf";
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class TodoService {
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
-  generatePDF(todos: Todo[]):void {
+  generatePDF(todos: Todo[]): void {
     const doc = new jsPDF();
     doc.setFont("helvetica", "bold");
     doc.text("Lista de Tarefas", 10, 10);
@@ -101,7 +102,12 @@ export class TodoService {
   }
 
   clearCompletedTasks() {
-    alert('Quer mesmo excluir as tarefas concluídas?')
+    Swal.fire({
+      title: 'Sucesso!',
+      text: 'Sua ação foi concluída.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
     this.todos = this.todos.filter(({ completed }) => completed === false);
     this.updateLocalStorageAndSave();
   }

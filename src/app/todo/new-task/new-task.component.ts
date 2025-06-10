@@ -3,6 +3,7 @@ import { Todo } from '../../shared/models/todo.model';
 import { TodoService } from 'src/app/shared/services/todo.service';
 import { Filter } from 'bad-words';
 const filter = new Filter();
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-task',
@@ -21,14 +22,22 @@ export class NewTaskComponent {
 
   addTask() {
     if (!this.newTaskTitle.trim()) {
-      alert('O titulo da tarefa não pode estar vazio!');
-      return;
+      Swal.fire({
+        title: 'Erro!',
+        text: 'O título da tarefa não pode estar vazio!',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      }); return;
     }
 
     const textoFiltrado = filter.clean(this.newTaskTitle);
     if (textoFiltrado !== this.newTaskTitle || this.containsBadWord(this.newTaskTitle)) {
-      alert('Esse título contém palavras não permitidas ou mentirosas!');
-      return;
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Esse título contém palavras não permitidas ou mentirosas!',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      }); return;
     }
 
     const tarefasSeparadas = this.newTaskTitle.split('|').map(tarefa => tarefa.trim());
